@@ -1,0 +1,25 @@
+[user]
+    email = ademar111190@gmail.com
+    name = Ademar Alves de Oliveira
+[alias]
+    a = add
+    b = branch
+    bc= checkout -b
+    bb= log --graph --simplify-by-decoration --pretty=format:'%d' --all
+    c = commit
+    cl= clean -f -d
+    d = diff
+    dc= diff --cached
+    e = shortlog --summary --numbered
+    f = ls-files --others --exclude-standard
+    h = log --pretty=format:\"%h %ad | %s%d [%an]\" --graph --date=short
+    k = clone --recursive
+    l = shortlog -s
+    o = checkout
+    p = pull
+    s = status
+    t = log --date-order --graph --tags --simplify-by-decoration --pretty=format:'%ai %h %d'
+    u = reset HEAD~
+    x = push
+[core]
+    autocrlf = input
