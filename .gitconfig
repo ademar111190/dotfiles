@@ -21,5 +21,6 @@
     t = log --date-order --graph --tags --simplify-by-decoration --pretty=format:'%ai %h %d'
     u = reset HEAD~
     x = push
+    conflicts = !git ls-files -u | cut -f 2 | sort -u
 [core]
     autocrlf = input

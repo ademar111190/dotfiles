@@ -18,6 +18,8 @@ eval $(thefuck --alias)
 export vim=/usr/local/Cellar/macvim/8.1-161/bin/vim
 export vi=$vim
 
+export LC_ALL=en_US.UTF-8
+
 export FZF_DEFAULT_COMMAND='rg --files --hidden --follow --glob "!.git/*"'
 export FZF_DEFAULT_OPTS="--ansi --preview-window 'right:60%' --preview 'bat --color=always --style=header,grid --line-range :300 {}'"
 
