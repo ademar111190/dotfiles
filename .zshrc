@@ -72,4 +72,6 @@ quill() {
   ps ax | grep $1 | cut -f1 -d ' ' | xargs kill -9
 }
 
+export GPG_TTY=$(tty)
+
 neofetch
