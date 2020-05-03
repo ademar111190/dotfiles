@@ -1,6 +1,7 @@
 [user]
     email = ademar111190@gmail.com
     name = Ademar Alves de Oliveira
+    signingkey = <<machine key>>
 [alias]
     a = add
     b = branch
@@ -24,3 +25,5 @@
     conflicts = !git ls-files -u | cut -f 2 | sort -u
 [core]
     autocrlf = input
+[commit]
+    gpgsign = true
