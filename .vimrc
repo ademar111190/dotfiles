@@ -16,6 +16,7 @@ Plug 'https://github.com/vim-airline/vim-airline.git'
 Plug 'https://github.com/mustache/vim-mustache-handlebars.git'
 Plug 'https://github.com/dikiaap/minimalist.git'
 Plug 'https://github.com/mg979/vim-visual-multi'
+Plug 'https://github.com/mkitt/tabline.vim.git'
 
 " List ends here. Plugins become visible to Vim after this call.
 call plug#end()
