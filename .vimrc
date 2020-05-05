@@ -61,19 +61,17 @@ set expandtab       " Expand TABs to spaces
 set splitbelow
 set splitright
 set backspace=indent,eol,start
-set listchars=tab:▶\ 
-" =space:·,
-highlight WhiteSpaceBol guifg=blue
-highlight WhiteSpaceMol guifg=white
-match WhiteSpaceMol / /
-2match WhiteSpaceBol /^ \+/
+set listchars=tab:▶▶,space:·,
 set list
 
 set t_Co=256
 syntax on
 colorscheme minimalist
 
+au BufRead,BufNewFile Podfile set filetype=ruby
 au BufReadPost BUCK set syntax=python
+
+highlight SpecialKey ctermbg=none ctermfg=236
 
 " fzf
 command! -bang -nargs=* Find 
