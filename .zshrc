@@ -14,6 +14,12 @@ plugins=(
 
 source $ZSH/oh-my-zsh.sh
 
+prompt_context () {
+    if [[ "$USER" != "$DEFAULT_USER" || -n "$SSH_CLIENT" ]]; then
+        prompt_segment black default "%(!.%{%F{yellow}%}.)$USER"
+    fi
+}
+
 eval $(thefuck --alias)
 export vim=/usr/local/Cellar/macvim/8.1-161/bin/vim
 export vi=$vim
