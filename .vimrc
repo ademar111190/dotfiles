@@ -79,3 +79,9 @@ command! -bang -nargs=* Find
             \ fzf#vim#with_preview(),
             \ <bang>0)
 set grepprg=rg\ --vimgrep
+
+" Uppercase alias
+:command Q q
+:command W w
+:command WQ wq
+:command Wq wq
