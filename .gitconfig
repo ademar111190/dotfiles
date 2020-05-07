@@ -23,6 +23,7 @@
     u = reset HEAD~
     x = push
     conflicts = !git ls-files -u | cut -f 2 | sort -u
+    apply-gitignore = !git ls-files -ci --exclude-standard -z | xargs -0 git rm --cached
 [core]
     autocrlf = input
 [commit]
