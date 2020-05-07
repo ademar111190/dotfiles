@@ -27,5 +27,3 @@
     autocrlf = input
 [commit]
     gpgsign = true
-[alias]
-    conflicts = !git ls-files -u | cut -f 2 | sort -u
