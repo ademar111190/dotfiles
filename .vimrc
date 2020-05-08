@@ -60,6 +60,7 @@ set smarttab        " Inserts space when hit the <Tab>
 set expandtab       " Expand TABs to spaces
 set splitbelow
 set splitright
+set clipboard=unnamedplus
 set backspace=indent,eol,start
 set listchars=tab:▶▶,space:·,
 set list
