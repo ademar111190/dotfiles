@@ -5,6 +5,9 @@ tap "homebrew/cask-versions"
 tap "homebrew/core"
 tap "px4/px4"
 cask "adoptopenjdk8"
+cask "ukelele
+brew "zsh-autosuggestions"
+brew "macvim", link: false
 brew "ant"
 brew "apktool"
 brew "autoconf"
