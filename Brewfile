@@ -4,6 +4,8 @@ tap "homebrew/cask"
 tap "homebrew/cask-versions"
 tap "homebrew/core"
 tap "px4/px4"
+brew "gtk+3"
+brew "pygobject3"
 cask "adoptopenjdk8"
 cask "ukelele
 brew "zsh-autosuggestions"
