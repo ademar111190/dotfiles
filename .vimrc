@@ -23,8 +23,11 @@ call plug#end()
 
 " Nerd tree
 let NERDTreeShowHidden=1
-" let NERDTreeMapOpenInTab='<ENTER>'
 map <c-t> :NERDTreeToggle<CR>
+
+" Vim multi line
+let g:VM_maps = {}
+let g:VM_maps['Find Under'] = '<C-g>'
 
 " Vundle begin
 set nocompatible              " be iMproved, required
@@ -72,7 +75,7 @@ colorscheme minimalist
 au BufRead,BufNewFile Podfile set filetype=ruby
 au BufReadPost BUCK set syntax=python
 
-highlight SpecialKey ctermbg=none ctermfg=236
+highlight SpecialKey ctermbg=none ctermfg=238
 
 " fzf
 command! -bang -nargs=* Find 
