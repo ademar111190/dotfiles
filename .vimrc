@@ -17,6 +17,8 @@ Plug 'https://github.com/mustache/vim-mustache-handlebars.git'
 Plug 'https://github.com/dikiaap/minimalist.git'
 Plug 'https://github.com/mg979/vim-visual-multi'
 Plug 'https://github.com/mkitt/tabline.vim.git'
+Plug 'https://github.com/SirVer/ultisnips.git'
+Plug 'https://github.com/honza/vim-snippets.git'
 
 " List ends here. Plugins become visible to Vim after this call.
 call plug#end()
@@ -74,6 +76,7 @@ colorscheme minimalist
 
 au BufRead,BufNewFile Podfile set filetype=ruby
 au BufReadPost BUCK set syntax=python
+au BufRead,BufNewFile *.config set filetype=dosini
 
 highlight SpecialKey ctermbg=none ctermfg=238
 
@@ -89,3 +92,23 @@ set grepprg=rg\ --vimgrep
 :command W w
 :command WQ wq
 :command Wq wq
+
+" YouCompleteMe + Snip: https://stackoverflow.com/questions/14896327/ultisnips-and-youcompleteme
+function! g:UltiSnips_Complete()
+    call UltiSnips#ExpandSnippet()
+    if g:ulti_expand_res == 0
+        if pumvisible()
+            return "\<C-n>"
+        else
+            call UltiSnips#JumpForwards()
+            if g:ulti_jump_forwards_res == 0
+                return "\<TAB>"
+            endif
+        endif
+    endif
+    return ""
+endfunction
+au BufEnter * exec "inoremap <silent> " . g:UltiSnipsExpandTrigger . " <C-R>=g:UltiSnips_Complete()<cr>"
+let g:UltiSnipsJumpForwardTrigger="<tab>"
+let g:UltiSnipsListSnippets="<c-e>"
+inoremap <expr> <CR> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
