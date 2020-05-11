@@ -24,6 +24,7 @@ setDefaultApp "com.sublimetext.3" \
     "dyn.ah62d4rv4ge80442"
 
 setDefaultApp "com.aone.keka" \
-    "public.zip-archive"
+    "public.zip-archive" \
+    "org.7-zip.7-zip-archive"
 
 killall Finder
