@@ -1,0 +1,36 @@
+" General
+set relativenumber  " Show line numbers
+set tabstop=4       " Show \t with width of 4
+set softtabstop=4   " Number of columns for a \t
+set shiftwidth=4    " Indents with a width of 4
+set smarttab        " Inserts space when hit the <Tab>
+set expandtab       " Expand TABs to spaces
+set splitbelow
+set splitright
+set clipboard=unnamedplus
+set backspace=indent,eol,start
+set listchars=tab:▶▶,space:·,
+set list
+
+set t_Co=256
+syntax on
+colorscheme minimalist
+
+au BufRead,BufNewFile Podfile set filetype=ruby
+au BufReadPost BUCK set syntax=python
+au BufRead,BufNewFile *.config set filetype=dosini
+
+highlight SpecialKey ctermbg=none ctermfg=238
+
+" fzf
+command! -bang -nargs=* Find 
+            \ call fzf#vim#grep('rg --column --line-number --no-heading --fixed-strings --ignore-case --hidden --follow --glob "!.git/*" --color "always" '.shellescape(<q-args>).'| tr -d "\017"', 1, 
+            \ fzf#vim#with_preview(),
+            \ <bang>0)
+set grepprg=rg\ --vimgrep
+
+" Uppercase alias
+:command Q q
+:command W w
+:command WQ wq
+:command Wq wq
