@@ -57,7 +57,7 @@ nnoremap <C-H> <C-W><C-H>
 map <F2> <Esc>:FZF<CR>
 map <F3> <Esc>:Find<CR>
 
-set number          " Show line numbers
+set relativenumber  " Show line numbers
 set tabstop=4       " Show \t with width of 4
 set softtabstop=4   " Number of columns for a \t
 set shiftwidth=4    " Indents with a width of 4
