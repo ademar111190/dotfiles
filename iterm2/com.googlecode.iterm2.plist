@@ -192,6 +192,8 @@
 	</dict>
 	<key>HapticFeedbackForEsc</key>
 	<false/>
+	<key>HideMenuBarInFullscreen</key>
+	<true/>
 	<key>HotkeyMigratedFromSingleToMulti</key>
 	<true/>
 	<key>LoadPrefsFromCustomFolder</key>
@@ -246,7 +248,7 @@
 	<key>NSWindow Frame SUUpdateAlert</key>
 	<string>610 218 700 622 0 0 1920 1057 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>0 0 1675 1050 0 0 1680 1050 </string>
+	<string>0 0 1680 1050 0 0 1680 1050 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
 	<string>399 360 665 488 0 0 1680 1050 </string>
 	<key>NSWindow Frame iTerm Window 2</key>
@@ -957,7 +959,7 @@
 			<key>Shortcut</key>
 			<string></string>
 			<key>Show Status Bar</key>
-			<true/>
+			<false/>
 			<key>Silence Bell</key>
 			<false/>
 			<key>Status Bar Layout</key>
@@ -1212,7 +1214,7 @@
 	<key>NoSyncLastTipTime</key>
 	<real>594566344.44675803</real>
 	<key>NoSyncLaunchExperienceControllerRunCount</key>
-	<integer>292</integer>
+	<integer>304</integer>
 	<key>NoSyncNextAnnoyanceTime</key>
 	<real>594052623.52535498</real>
 	<key>NoSyncOnboardingWindowHasBeenShown</key>
@@ -2010,7 +2012,7 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2020-05-07T14:56:27Z</date>
+	<date>2020-05-13T13:49:44Z</date>
 	<key>SUSendProfileInfo</key>
 	<false/>
 	<key>SUUpdateRelaunchingMarker</key>
