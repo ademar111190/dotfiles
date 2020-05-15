@@ -62,7 +62,9 @@ alias got=git
 alias gt=git
 alias gut=git
 alias pip=pip3
-alias g=/usr/local/opt/gradle/libexec/bin/gradle
+alias ls=exa
+alias la="exa -alh"
+alias cat=bat
 
 alias subl="open -a Sublime\ Text $@"
 
