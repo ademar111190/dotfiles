@@ -48,8 +48,6 @@ filetype plugin indent on    " required
 " Vundle end
 
 " General
-nmap <c-s> :w<CR>
-imap <c-s> <Esc>:w<CR>a
 nnoremap <C-J> <C-W><C-J>
 nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
@@ -65,7 +63,7 @@ set smarttab        " Inserts space when hit the <Tab>
 set expandtab       " Expand TABs to spaces
 set splitbelow
 set splitright
-set clipboard=unnamedplus
+set clipboard=unnamed
 set backspace=indent,eol,start
 set listchars=tab:▶▶,space:·,
 set list
@@ -79,6 +77,9 @@ au BufReadPost BUCK set syntax=python
 au BufRead,BufNewFile *.config set filetype=dosini
 
 highlight SpecialKey ctermbg=none ctermfg=238
+
+" Leader
+let mapleader=" "
 
 " fzf
 command! -bang -nargs=* Find 
