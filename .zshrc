@@ -21,8 +21,10 @@ prompt_context () {
 }
 
 eval $(thefuck --alias)
-export vim=/usr/local/Cellar/macvim/8.1-161/bin/vim
+export vim=nvim
 export vi=$vim
+export VISUAL=$vim
+export EDITOR="$VISUAL"
 
 export LC_ALL=en_US.UTF-8
 
@@ -65,6 +67,9 @@ alias pip=pip3
 alias ls=exa
 alias la="exa -alh"
 alias cat=bat
+alias v=$vim
+alias vi=$vim
+alias vim=$vim
 
 alias subl="open -a Sublime\ Text $@"
 
