@@ -1,3 +1,7 @@
 # vim session
 dotfiles.vim
 *.swp
+
+# nvim
+nvim/plugged
+nvim/.netrwhist
