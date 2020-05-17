@@ -1,5 +1,6 @@
 " Plugins
 call plug#begin('~/.config/nvim/plugged')
+Plug 'https://github.com/Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'https://github.com/dracula/vim.git', { 'as': 'dracula' }
 Plug 'https://github.com/junegunn/fzf.git'
 Plug 'https://github.com/junegunn/fzf.vim.git'
@@ -39,13 +40,13 @@ let g:airline_powerline_fonts = 1
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#formatter = 'unique_tail'
 
+" Deoplete
+let g:deoplete#enable_at_startup = 1
+
 " File types
 au BufRead,BufNewFile Podfile set filetype=ruby
 au BufReadPost BUCK set syntax=python
 au BufRead,BufNewFile *.config set filetype=dosini
-
-" Highlight
-" highlight SpecialKey ctermbg=none ctermfg=238 override by dracula
 
 " Uppercase alias
 :command Q q
