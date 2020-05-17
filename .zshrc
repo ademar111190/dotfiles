@@ -3,26 +3,26 @@ export ZSH="/Users/ademar/.oh-my-zsh"
 ZSH_THEME="agnoster"
 
 plugins=(
-  git
-  osx
-  gradle
-  adb
-  zsh-autosuggestions
-  docker
-  python
+    git
+    osx
+    gradle
+    adb
+    zsh-autosuggestions
+    docker
+    python
 )
 
 source $ZSH/oh-my-zsh.sh
 
 prompt_context () {
     if [[ "$USER" != "$DEFAULT_USER" || -n "$SSH_CLIENT" ]]; then
-        prompt_segment black default "%(!.%{%F{yellow}%}.)$USER"
+        BTC=$(bitcoin)
+        prompt_segment black default "%(!.%{%F{yellow}%}.)$USER $BTC"
     fi
 }
 
 eval $(thefuck --alias)
 export vim=nvim
-export vi=$vim
 export VISUAL=$vim
 export EDITOR="$VISUAL"
 
@@ -49,29 +49,29 @@ PATH="${PATH}:/Users/ademar/Workspace/mrScripts"
 PATH="${PATH}:/Users/ademar/Workspace/cleandroid"
 
 run-gradle() {
-  FLAVOR=$1
-  VARIANT="$(tr '[:lower:]' '[:upper:]' <<< ${FLAVOR:0:1})${FLAVOR:1}"
-  ./gradlew build${VARIANT}PreBundle assemble${VARIANT}
-  ls app/build/outputs/apk/${FLAVOR}/ | grep apk | xargs -I % $SHELL -c "adbplus install -r app/build/outputs/apk/${FLAVOR}/%"
+    FLAVOR=$1
+    VARIANT="$(tr '[:lower:]' '[:upper:]' <<< ${FLAVOR:0:1})${FLAVOR:1}"
+    ./gradlew build${VARIANT}PreBundle assemble${VARIANT}
+    ls app/build/outputs/apk/${FLAVOR}/ | grep apk | xargs -I % $SHELL -c "adbplus install -r app/build/outputs/apk/${FLAVOR}/%"
 }
 
 install-apks() {
-  find . -name '*.apk' -not -path '**/intermediates/**' | xargs -I % $SHELL -c "adbplus install -r %"
+    find . -name '*.apk' -not -path '**/intermediates/**' | xargs -I % $SHELL -c "adbplus install -r %"
 }
 
 alias gti=git
 alias got=git
 alias gt=git
 alias gut=git
+alias python=python3
 alias pip=pip3
 alias ls=exa
 alias la="exa -alh"
 alias cat=bat
+alias subl="open -a Sublime\ Text $@"
 alias v=$vim
 alias vi=$vim
 alias vim=$vim
-
-alias subl="open -a Sublime\ Text $@"
 
 alias clear-branchs="git for-each-ref --format '%(refname:short)' refs/heads | grep -v master | xargs git branch -D"
 alias clear-local-gradle='find . \( -name "intermediates" -o -name "bin" -o -name "gen" -o -name "build" \) | xargs rm -rf'
@@ -85,6 +85,22 @@ quill() {
   ps ax | grep $1 | cut -f1 -d ' ' | xargs kill -9
 }
 
+export bitcoin() {
+    last=$(tail -1 ~/.bitcoin_price)
+    onebefore=$(tail -2 ~/.bitcoin_price | head -1)
+    if (( $last > $onebefore )); then
+        echo "↗ ₿ $last"
+    elif (( $last < $onebefore )); then
+        echo "↘︎ ₿ $last"
+    else
+        echo "⇌ ₿ $last"
+    fi
+    curl -s http://api.coindesk.com/v1/bpi/currentprice.json | python3 -c "import json, sys; print('{:.0f}'.format(float(json.load(sys.stdin)['bpi']['USD']['rate'].replace(',',''))))" >> ~/.bitcoin_price 2&>/dev/null
+}
+
 export GPG_TTY=$(tty)
 
-neofetch
+if [ -z "$TMUX" ] && [ -z "$VIM" ]; then 
+    neofetch;
+    fortune | cowsay -f ~/Workspace/cowsay-files/cows/$(ls ~/Workspace/cowsay-files/cows | grep ".cow" | shuf -n1) -W 100 | lolcat;
+fi
