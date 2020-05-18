@@ -49,6 +49,7 @@ let g:deoplete#enable_at_startup = 1
 au BufRead,BufNewFile Podfile set filetype=ruby
 au BufReadPost BUCK set syntax=python
 au BufRead,BufNewFile *.config set filetype=dosini
+au BufRead,BufNewFile config set filetype=dosini
 au BufRead,BufNewFile *.fish set filetype=sh
 
 " Uppercase alias
