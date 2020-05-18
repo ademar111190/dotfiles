@@ -4,6 +4,7 @@ Plug 'https://github.com/Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'https://github.com/dracula/vim.git', { 'as': 'dracula' }
 Plug 'https://github.com/junegunn/fzf.git'
 Plug 'https://github.com/junegunn/fzf.vim.git'
+Plug 'https://github.com/mbbill/undotree.git'
 Plug 'https://github.com/udalov/kotlin-vim.git'
 Plug 'https://github.com/vim-airline/vim-airline.git'
 call plug#end()
@@ -22,6 +23,7 @@ set backspace=indent,eol,start
 set listchars=tab:▶▶,space:·,
 set list
 set cursorline
+let mapleader = " "
 
 " Colors
 set t_Co=256
@@ -60,6 +62,12 @@ nnoremap <C-J> <C-W><C-J>
 nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
+nnoremap <Leader>j <C-W><C-J>
+nnoremap <Leader>k <C-W><C-K>
+nnoremap <Leader>l <C-W><C-L>
+nnoremap <Leader>h <C-W><C-H>
+nnoremap <Leader>v <Esc>:split<CR>
+nnoremap <Leader>o <Esc>:vs<CR>
 
 " FZF
 nnoremap <F2> <Esc>:FZF<CR>
@@ -69,3 +77,6 @@ command! -bang -nargs=* Find
             \ fzf#vim#with_preview(),
             \ <bang>0)
 set grepprg=rg\ --vimgrep
+
+" Undotree
+nnoremap <Leader>u <Esc>:UndotreeToggle<CR>:UndotreeFocus<CR>
