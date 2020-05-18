@@ -1,4 +1,4 @@
-set --erase fish_greeting
+set fish_greeting
 
 set -x vim nvim
 set -x VISUAL $vim
@@ -24,15 +24,6 @@ set PATH $PATH /Users/ademar/Scripts
 set PATH $PATH /Users/ademar/Library/Python/3.7/bin
 set PATH $PATH /Users/ademar/Workspace/mrScripts
 set PATH $PATH /Users/ademar/Workspace/cleandroid
-
-function prompt_user
-    if [ "$USER" != "$default_user" -o -n "$SSH_CLIENT" ]
-        set USER (whoami)
-        set BTC (bitcoin)
-        set USER_PROMPT "$USER $BTC"
-        prompt_segment $color_user_bg $color_user_str $USER_PROMPT
-    end
-end
 
 function gti
     git $argv
