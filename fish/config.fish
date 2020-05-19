@@ -64,6 +64,9 @@ end
 function vim
     $vim $argv
 end
+function clear-branchs
+    git for-each-ref --format '%(refname:short)' refs/heads | grep -v master | xargs git branch -D
+end
 
 function bitcoin_last_price
     tail -1 ~/.bitcoin_price
