@@ -27,4 +27,7 @@ setDefaultApp "com.aone.keka" \
     "public.zip-archive" \
     "org.7-zip.7-zip-archive"
 
+setDefaultApp "org.videolan.vlc" \
+    "public.mpeg-4"
+
 killall Finder
