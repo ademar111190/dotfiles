@@ -69,6 +69,7 @@ nnoremap <Leader>l <C-W><C-L>
 nnoremap <Leader>h <C-W><C-H>
 nnoremap <Leader>v <Esc>:split<CR>
 nnoremap <Leader>o <Esc>:vs<CR>
+nnoremap <Leader>t <Esc>:tabedit<CR>
 
 " FZF
 nnoremap <F2> <Esc>:FZF<CR>
