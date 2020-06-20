@@ -24,6 +24,7 @@ set PATH $PATH /Users/ademar/Scripts
 set PATH $PATH /Users/ademar/Library/Python/3.7/bin
 set PATH $PATH /Users/ademar/Workspace/mrScripts
 set PATH $PATH /Users/ademar/Workspace/cleandroid
+set PATH $PATH ~/.cargo/bin
 
 function gti
     git $argv
