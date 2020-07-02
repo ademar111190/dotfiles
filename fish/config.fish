@@ -25,6 +25,9 @@ set PATH $PATH /Users/ademar/Library/Python/3.7/bin
 set PATH $PATH /Users/ademar/Workspace/mrScripts
 set PATH $PATH /Users/ademar/Workspace/cleandroid
 set PATH $PATH ~/.cargo/bin
+set PATH $PATH ~/Qt/5.15.0/clang_64/bin
+
+set -x DYLD_LIBRARY_PATH ~/Qt/5.15.0/clang_64/lib
 
 function gti
     git $argv
