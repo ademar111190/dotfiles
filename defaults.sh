@@ -18,17 +18,19 @@ function setDefaultApp() {
 }
 
 setDefaultApp "com.sublimetext.3" \
+    "dyn.ah62d4rv4ge80442" \
+    "net.daringfireball.markdown" \
+    "public.json" \
     "public.plain-text" \
     "public.python-script" \
-    "net.daringfireball.markdown" \
-    "dyn.ah62d4rv4ge80442"
+    "public.xml"
 
 setDefaultApp "com.aone.keka" \
-    "public.zip-archive" \
-    "org.7-zip.7-zip-archive"
+    "org.7-zip.7-zip-archive" \
+    "public.zip-archive"
 
 setDefaultApp "org.videolan.vlc" \
-    "public.mpeg-4" \
-    "public.mp3"
+    "public.mp3" \
+    "public.mpeg-4"
 
 killall Finder
