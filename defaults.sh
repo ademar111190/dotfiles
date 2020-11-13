@@ -30,6 +30,7 @@ setDefaultApp "com.aone.keka" \
     "public.zip-archive"
 
 setDefaultApp "org.videolan.vlc" \
+    "com.apple.quicktime-movie" \
     "public.mp3" \
     "public.mpeg-4"
 
