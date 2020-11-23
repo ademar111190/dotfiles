@@ -34,4 +34,7 @@ setDefaultApp "org.videolan.vlc" \
     "public.mp3" \
     "public.mpeg-4"
 
+setDefaultApp "org.libreoffice.script" \
+    "com.microsoft.word.doc"
+
 killall Finder
