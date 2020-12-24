@@ -1,0 +1,21 @@
+{
+	"draw_white_space": "all",
+	"folder_exclude_patterns":
+	[
+		"intermediates",
+		"bin",
+		"gen",
+		"build",
+		".gradle",
+		".git"
+	],
+	"font_size": 20,
+	"ignored_packages":
+	[
+		"Vintage"
+	],
+	"tab_size": 2,
+	"theme": "Default.sublime-theme",
+	"translate_tabs_to_spaces": true
+}
+
