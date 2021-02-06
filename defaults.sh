@@ -23,6 +23,7 @@ setDefaultApp "com.sublimetext.3" \
     "public.json" \
     "public.plain-text" \
     "public.python-script" \
+    "public.yaml" \
     "public.xml"
 
 setDefaultApp "com.aone.keka" \
