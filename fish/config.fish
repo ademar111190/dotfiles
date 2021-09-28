@@ -13,7 +13,8 @@ set -x ANDROID_NDK "/Users/ademar/Library/Android/sdk/ndk-bundle"
 set -x ANDROID_SDK "/Users/ademar/Library/Android/sdk"
 set -x ANDROID_HOME $ANDROID_SDK
 set -x ANDROID_SDK_ROOT "/Users/ademar/Library/Android"
-set -x JAVA_HOME "/Applications/Android Studio.app/Contents/jre/jdk/Contents/Home"
+set -x JAVA_HOME "/Applications/Android Studio.app/Contents/jre/Contents/Home"
+set -x DART_SDK "/usr/local/opt/dart/libexec"
 
 set PATH $PATH $ANDROID_HOME
 set PATH $PATH $ANDROID_HOME/platform-tools
@@ -25,7 +26,7 @@ set PATH $PATH /Users/ademar/Library/Python/3.7/bin
 set PATH $PATH /Users/ademar/Workspace/mrScripts
 set PATH $PATH /Users/ademar/Workspace/cleandroid
 set PATH $PATH ~/.cargo/bin
-set PATH $PATH ~/Qt/5.15.0/clang_64/bin
+set PATH $PATH /usr/local/go/bin
 
 set -x DYLD_LIBRARY_PATH ~/Qt/5.15.0/clang_64/lib
 
@@ -92,6 +93,10 @@ function bitcoin
         echo ⇌ ₿ $formatted
     end
     curl -s http://api.coindesk.com/v1/bpi/currentprice.json | python3 -c "import json, sys; print('{:.0f}'.format(float(json.load(sys.stdin)['bpi']['USD']['rate'].replace(',',''))))" >> ~/.bitcoin_price 2>/dev/null
+end
+
+function adbopenurl
+    adb shell am start -a android.intent.action.VIEW -d $argv
 end
 
 set -x GPG_TTY (tty)

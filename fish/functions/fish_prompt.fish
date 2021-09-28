@@ -154,8 +154,9 @@ end
 
 function prompt_user
     if [ "$USER" != "$default_user" -o -n "$SSH_CLIENT" ]
-        set BTC (bitcoin)
-        set USER_PROMPT "$BTC"
+        #set BTC (bitcoin)
+        #set USER_PROMPT "$BTC"
+        set USER_PROMPT "∮"
         prompt_segment $color_user_bg $color_user_str $USER_PROMPT
     end
 end

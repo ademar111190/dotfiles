@@ -5,3 +5,6 @@ dotfiles.vim
 # nvim
 nvim/plugged
 nvim/.netrwhist
+
+# macos
+.DS_Store
