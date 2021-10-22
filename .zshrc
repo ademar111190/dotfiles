@@ -1,4 +1,4 @@
-export ZSH="/Users/ademar/.oh-my-zsh"
+export ZSH="${HOME}/.oh-my-zsh"
 
 ZSH_THEME="agnoster"
 
@@ -12,14 +12,15 @@ plugins=(
     python
 )
 
+PATH="${PATH}:/home/ademar/.local/bin"
 source $ZSH/oh-my-zsh.sh
 
-prompt_context () {
-    if [[ "$USER" != "$DEFAULT_USER" || -n "$SSH_CLIENT" ]]; then
-        BTC=$(bitcoin)
-        prompt_segment black default "%(!.%{%F{yellow}%}.)$USER $BTC"
-    fi
-}
+#prompt_context () {
+#    if [[ "$USER" != "$DEFAULT_USER" || -n "$SSH_CLIENT" ]]; then
+#        BTC=$(bitcoin)
+#        prompt_segment black default "%(!.%{%F{yellow}%}.)$USER $BTC"
+#    fi
+#}
 
 eval $(thefuck --alias)
 export vim=nvim
@@ -47,6 +48,7 @@ PATH="${PATH}:/Users/ademar/Scripts"
 PATH="${PATH}:/Users/ademar/Library/Python/3.7/bin"
 PATH="${PATH}:/Users/ademar/Workspace/mrScripts"
 PATH="${PATH}:/Users/ademar/Workspace/cleandroid"
+PATH="${PATH}:/home/ademar/Workspace/flutter/bin"
 
 run-gradle() {
     FLAVOR=$1
@@ -101,6 +103,6 @@ export bitcoin() {
 export GPG_TTY=$(tty)
 
 if [ -z "$TMUX" ] && [ -z "$VIM" ]; then 
-    neofetch;
-    fortune | cowsay -f ~/Workspace/cowsay-files/cows/$(ls ~/Workspace/cowsay-files/cows | grep ".cow" | shuf -n1) -W 100 | lolcat;
+    #neofetch;
+    #fortune | cowsay -f ~/Workspace/cowsay-files/cows/$(ls ~/Workspace/cowsay-files/cows | grep ".cow" | shuf -n1) -W 100 | lolcat;
 fi
