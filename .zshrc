@@ -4,7 +4,7 @@ ZSH_THEME="agnoster"
 
 plugins=(
     git
-    osx
+    macos
     gradle
     adb
     zsh-autosuggestions
