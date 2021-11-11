@@ -37,7 +37,7 @@ export ANDROID_SDK="/Users/ademar/Library/Android/sdk"
 export ANDROID_HOME=$ANDROID_SDK
 export ANDROID_SDK_ROOT="/Users/ademar/Library/Android"
 export KOTLIN_HOME="/usr/local/Cellar/kotlin/1.3.21/"
-export JAVA_HOME="/Applications/Android Studio.app/Contents/jre/jdk/Contents/Home"
+export JAVA_HOME="/Applications/Android Studio.app/Contents/jre/Contents/Home"
 
 PATH="${PATH}:${ANDROID_HOME}"
 PATH="${PATH}:${ANDROID_HOME}/platform-tools"
