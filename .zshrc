@@ -49,6 +49,7 @@ PATH="${PATH}:/Users/ademar/Library/Python/3.7/bin"
 PATH="${PATH}:/Users/ademar/Workspace/mrScripts"
 PATH="${PATH}:/Users/ademar/Workspace/cleandroid"
 PATH="${PATH}:/home/ademar/Workspace/flutter/bin"
+PATH="${PATH}:/Users/ademar/.local/bin"
 
 run-gradle() {
     FLAVOR=$1
