@@ -8,3 +8,6 @@ nvim/.netrwhist
 
 # macos
 .DS_Store
+
+# Copilot
+nvim/pack/github/start/copilot.vim
