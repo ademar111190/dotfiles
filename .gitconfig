@@ -1,7 +1,7 @@
 [user]
     email = ademar111190@gmail.com
     name = Ademar Alves de Oliveira
-    signingkey = <<machine key>>
+#    signingkey = <<machine key>>
 [alias]
     a = add
     b = branch
@@ -27,6 +27,6 @@
 [core]
     autocrlf = input
 [commit]
-    gpgsign = true
+#    gpgsign = true
 [init]
     defaultBranch = master

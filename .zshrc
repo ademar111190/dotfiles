@@ -15,12 +15,12 @@ plugins=(
 PATH="${PATH}:/home/ademar/.local/bin"
 source $ZSH/oh-my-zsh.sh
 
-#prompt_context () {
-#    if [[ "$USER" != "$DEFAULT_USER" || -n "$SSH_CLIENT" ]]; then
+prompt_context () {
+    if [[ "$USER" != "$DEFAULT_USER" || -n "$SSH_CLIENT" ]]; then
 #        BTC=$(bitcoin)
-#        prompt_segment black default "%(!.%{%F{yellow}%}.)$USER $BTC"
-#    fi
-#}
+        prompt_segment black default "%(!.%{%F{yellow}%}.)$USER" # $BTC"
+    fi
+}
 
 eval $(thefuck --alias)
 export vim=nvim
@@ -28,28 +28,49 @@ export VISUAL=$vim
 export EDITOR="$VISUAL"
 
 export LC_ALL=en_US.UTF-8
+export LDFLAGS="-L/usr/local/opt/curl/lib,-L/usr/local/opt/llvm/lib -Wl,-rpath,/usr/local/opt/llvm/lib"
+export CPPFLAGS="-I/usr/local/opt/curl/include -I/usr/local/opt/llvm/include"
+export PKG_CONFIG_PATH="/usr/local/opt/curl/lib/pkgconfig"
 
 export FZF_DEFAULT_COMMAND='rg --files --hidden --follow --glob "!.git/*"'
 export FZF_DEFAULT_OPTS="--ansi --preview-window 'right:60%' --preview 'bat --color=always --style=header,grid --line-range :300 {}'"
 
-export ANDROID_NDK="/Users/ademar/Library/Android/sdk/ndk-bundle"
+#export ANDROID_NDK="/Users/ademar/Library/Android/sdk/ndk/23.1.7779620"
+export ANDROID_NDK="/Users/ademar/Library/Android/sdk/ndk/22.1.7171670"
+export ANDROID_NDK_HOME=$ANDROID_NDK
 export ANDROID_SDK="/Users/ademar/Library/Android/sdk"
 export ANDROID_HOME=$ANDROID_SDK
 export ANDROID_SDK_ROOT="/Users/ademar/Library/Android"
 export KOTLIN_HOME="/usr/local/Cellar/kotlin/1.3.21/"
 export JAVA_HOME="/Applications/Android Studio.app/Contents/jre/Contents/Home"
+export CHROME_EXECUTABLE="/Applications/Brave Browser.app/Contents/MacOS/Brave Browser"
+export GOPATH="${HOME}/go"
 
 PATH="${PATH}:${ANDROID_HOME}"
+PATH="${PATH}:${ANDROID_HOME}/emulator"
 PATH="${PATH}:${ANDROID_HOME}/platform-tools"
 PATH="${PATH}:${ANDROID_HOME}/tools"
-PATH="${PATH}:${ANDROID_HOME}/emulator"
 PATH="${PATH}:${ANDROID_HOME}/tools/bin"
-PATH="${PATH}:/Users/ademar/Scripts"
-PATH="${PATH}:/Users/ademar/Library/Python/3.7/bin"
-PATH="${PATH}:/Users/ademar/Workspace/mrScripts"
-PATH="${PATH}:/Users/ademar/Workspace/cleandroid"
-PATH="${PATH}:/home/ademar/Workspace/flutter/bin"
-PATH="${PATH}:/Users/ademar/.local/bin"
+
+PATH="${PATH}:${HOME}/.local/bin"
+PATH="${PATH}:${HOME}/.pub-cache/bin"
+
+PATH="${PATH}:${HOME}/go/bin"
+PATH="${PATH}:${HOME}/go/bin/protoc/bin"
+PATH="${PATH}:/usr/local/go/bin"
+
+PATH="${PATH}:${HOME}/Library/Python/3.7/bin"
+PATH="${PATH}:${HOME}/Library/Python/3.8/bin"
+PATH="${PATH}:${HOME}/Library/Python/3.9/bin"
+
+PATH="${PATH}:${HOME}/Workspace/cleandroid"
+PATH="${PATH}:${HOME}/Workspace/dotfiles/scripts"
+PATH="${PATH}:${HOME}/Workspace/flutter/bin"
+PATH="${PATH}:${HOME}/Workspace/flutter/bin"
+PATH="${PATH}:${HOME}/Workspace/mrScripts"
+
+PATH="${PATH}:/usr/local/opt/curl/bin"
+PATH="${PATH}:/usr/local/opt/llvm/bin"
 
 run-gradle() {
     FLAVOR=$1

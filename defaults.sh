@@ -36,6 +36,7 @@ setDefaultApp "org.videolan.vlc" \
     "public.mpeg-4"
 
 setDefaultApp "org.libreoffice.script" \
-    "com.microsoft.word.doc"
+    "com.microsoft.word.doc" \
+    "public.comma-separated-values-text"
 
 killall Finder

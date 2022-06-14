@@ -1,0 +1,22 @@
+#!/usr/bin/env ruby
+#
+# Check all files that have different mode than 644
+# and also clean using the xattr
+#
+# USAGE:
+#
+#   $ cleandroid
+
+Dir.glob('**/*') do |file|
+  if File.file?(file)
+
+    mode = sprintf('%o', File.stat(file).mode)
+
+    if (mode != '100644' && !file.end_with?('gradlew'))
+      p "[#{mode}] #{file}"
+      File.chmod(0644, file)
+      `xattr -c #{file}`
+    end
+
+  end
+end
