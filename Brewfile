@@ -45,6 +45,7 @@ brew "llvm"
 brew "lolcat"
 brew "lua"
 brew "mitmproxy"
+brew "ncdu"
 brew "neofetch"
 brew "neovim"
 brew "node", link: false

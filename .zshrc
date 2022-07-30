@@ -35,13 +35,12 @@ export PKG_CONFIG_PATH="/usr/local/opt/curl/lib/pkgconfig"
 export FZF_DEFAULT_COMMAND='rg --files --hidden --follow --glob "!.git/*"'
 export FZF_DEFAULT_OPTS="--ansi --preview-window 'right:60%' --preview 'bat --color=always --style=header,grid --line-range :300 {}'"
 
-#export ANDROID_NDK="/Users/ademar/Library/Android/sdk/ndk/23.1.7779620"
-export ANDROID_NDK="/Users/ademar/Library/Android/sdk/ndk/22.1.7171670"
+export ANDROID_NDK="/Users/ademar/Library/Android/sdk/ndk/23.1.7779620"
 export ANDROID_NDK_HOME=$ANDROID_NDK
 export ANDROID_SDK="/Users/ademar/Library/Android/sdk"
 export ANDROID_HOME=$ANDROID_SDK
 export ANDROID_SDK_ROOT="/Users/ademar/Library/Android"
-export KOTLIN_HOME="/usr/local/Cellar/kotlin/1.3.21/"
+export KOTLIN_HOME="/usr/local/Cellar/kotlin/1.7.10/"
 export JAVA_HOME="/Applications/Android Studio.app/Contents/jre/Contents/Home"
 export CHROME_EXECUTABLE="/Applications/Brave Browser.app/Contents/MacOS/Brave Browser"
 export GOPATH="${HOME}/go"
@@ -128,3 +127,5 @@ if [ -z "$TMUX" ] && [ -z "$VIM" ]; then
     #neofetch;
     #fortune | cowsay -f ~/Workspace/cowsay-files/cows/$(ls ~/Workspace/cowsay-files/cows | grep ".cow" | shuf -n1) -W 100 | lolcat;
 fi
+
+# analyse disk with ncdu
