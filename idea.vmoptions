@@ -1,0 +1,7 @@
+-Dfile.encoding=UTF-8
+-XX:MetaspaceSize=2G
+-XX:ReservedCodeCacheSize=1G
+-XX:SoftRefLRUPolicyMSPerMB=100
+-Xms3G
+-Xmx12G
+-server
