@@ -18,6 +18,7 @@ plugins=(
     zsh-autosuggestions
     docker
     python
+    brew
 )
 
 PATH="${PATH}:/home/ademar/.local/bin"
@@ -30,7 +31,6 @@ source $ZSH/oh-my-zsh.sh
 #     fi
 # }
 
-eval $(thefuck --alias)
 export vim=nvim
 export VISUAL=$vim
 export EDITOR="$VISUAL"
@@ -60,6 +60,7 @@ PATH="${PATH}:${ANDROID_HOME}/platform-tools"
 PATH="${PATH}:${ANDROID_HOME}/tools"
 PATH="${PATH}:${ANDROID_HOME}/tools/bin"
 
+PATH="${PATH}:/opt/homebrew/bin"
 PATH="${PATH}:${HOME}/.local/bin"
 PATH="${PATH}:${HOME}/.pub-cache/bin"
 
@@ -128,12 +129,13 @@ export bitcoin() {
     curl -s http://api.coindesk.com/v1/bpi/currentprice.json | python3 -c "import json, sys; print('{:.0f}'.format(float(json.load(sys.stdin)['bpi']['USD']['rate'].replace(',',''))))" >> ~/.bitcoin_price 2&>/dev/null
 }
 
-export GPG_TTY=$(tty)
-
 if [ -z "$TMUX" ] && [ -z "$VIM" ]; then 
     #neofetch;
     #fortune | cowsay -f ~/Workspace/cowsay-files/cows/$(ls ~/Workspace/cowsay-files/cows | grep ".cow" | shuf -n1) -W 100 | lolcat;
 fi
+
+export GPG_TTY=$(tty)
+eval $(thefuck --alias)
 
 # analyse disk with ncdu
 

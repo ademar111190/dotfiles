@@ -7,6 +7,7 @@ Plug 'https://github.com/junegunn/fzf.vim.git'
 Plug 'https://github.com/mbbill/undotree.git'
 Plug 'https://github.com/udalov/kotlin-vim.git'
 Plug 'https://github.com/vim-airline/vim-airline.git'
+Plug 'https://github.com/github/copilot.vim.git'
 call plug#end()
 
 " General
