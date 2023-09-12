@@ -27,7 +27,17 @@
     apply-gitignore = !git ls-files -ci --exclude-standard -z | xargs -0 git rm --cached
 [core]
     autocrlf = input
+    pager = delta
 [commit]
     gpgsign = true
 [init]
-    defaultBranch = master
+    defaultBranch = main
+[interactive]
+    diffFilter = delta --color-only
+[delta]
+    navigate = true
+    light = false
+[merge]
+    conflictstyle = diff3
+[diff]
+    colorMoved = default
